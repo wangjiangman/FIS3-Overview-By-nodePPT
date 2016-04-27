@@ -1,0 +1,254 @@
+<!--
+    Powered By nodePPT - This is probably the best web presentation tool so far!
+    version: 1.4.1
+    site: https://github.com/ksky521/nodePPT
+    date: 
+-->
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>FIS3 - By 王江漫</title>
+    <link rel="stylesheet" media="all" href="./css/nodeppt.css">
+    <link rel="stylesheet" media="only screen and (max-device-width: 480px)" href="./css/phone.css">
+    
+    <link rel="stylesheet" href="./js/highlight/styles/monokai_sublime.css">
+    <link rel="stylesheet" href="./css/font-awesome.css">
+    
+<link rel="stylesheet" href="./css/theme.moon.css">
+</head>
+<body>
+<div class="slides">
+    <slides id="container">
+        <slide class="slide fill" style="background-image:url('./img/bg.png')"><section class="slide-wrapper"><article class="flexbox vcenter">
+<h1>前端集成解决方案</h1>
+<h2>FIS3起步(Front-end Integrated Solution)</h2>
+<p><small>演讲者：王江漫</small></p>
+
+</article></section></slide>
+<slide class="slide fill" style="background-image:url('./img/bg.png')"><section class="slide-wrapper"><hgroup>
+<h2>主要内容</h2>
+
+</hgroup><article>
+
+<ul class="moveIn">
+<li>FIS3起步知识</li>
+<li>Reasy与FIS3的关系</li>
+<li>FIS3在项目中的使用举例</li>
+</ul>
+
+</article></section></slide>
+<slide class="slide fill" style="background-image:url('./img/bg.png')"><section class="slide-wrapper"><hgroup>
+<h2>为什么选择FIS(Winson如是说)</h2>
+
+</hgroup><article>
+
+<ul class="bounceIn">
+<li>配置简单，使用简单</li>
+<li>直接面向工程</li>
+<li>中文资料多</li>
+<li>大公司支撑，稳定可靠</li>
+<li>易于拓展</li>
+</ul>
+
+</article></section></slide>
+<slide class="slide fill" style="background-image:url('./img/bg.png')"><section class="slide-wrapper"><article class="flexbox vleft">
+<h1>FIS3之于FIS2</h1>
+<blockquote>
+<p>FIS3进一步简化了配置，语义化更好，可配置性更高，并且支持链式语法</p>
+</blockquote>
+
+</article></section></slide>
+<slide class="slide fill" style="background-image:url('./img/bg.png')"><section class="slide-wrapper"><hgroup>
+<h2>安装</h2>
+
+</hgroup><article>
+
+<ul class="moveIn">
+<li>FIS3 的构建不会修改源码，而是会通过用户设置，将构建结果输出到指定的目录<ul>
+<li>源码 —— src</li>
+<li>编译规则 —— fis-conf.js</li>
+<li>目标目录  —— dist</li>
+</ul>
+</li>
+<li>Windows下安装<ul>
+<li><span class="text-danger">npm install -g fis3</span></li>
+</ul>
+</li>
+</ul>
+
+</article></section></slide>
+<slide class="slide fill" style="background-image:url('./img/bg.png')"><section class="slide-wrapper"><hgroup>
+<h1>构建及调试(一)</h1>
+
+</hgroup><article>
+
+<ul class="zoomIn">
+<li>命令<ul>
+<li><strong>fis3 server open</strong>  —— FIS3内置Server目录</li>
+<li><strong>fis3 release</strong> —— 发布</li>
+<li><strong>fis3 server start</strong> —— 启动</li>
+<li><strong>-h</strong> —— 命令行帮助</li>
+<li><strong>-wL</strong> —— 监听及自动刷新</li>
+</ul>
+</li>
+</ul>
+
+</article></section></slide>
+<slide class="slide fill" style="background-image:url('./img/bg.png')"><section class="slide-wrapper"><hgroup>
+<h1>构建及调试(二)</h1>
+
+</hgroup><article>
+
+<ul>
+<li>一个简单的例子<ul class="rollIn">
+<li>资源定位</li>
+<li>配置文件</li>
+<li>文件指纹</li>
+<li>压缩资源</li>
+<li>CssSprite图片合并</li>
+</ul>
+</li>
+</ul>
+
+</article></section></slide>
+<slide class="slide fill" style="background-image:url('./img/bg.png')"><section class="slide-wrapper"><hgroup>
+<h2>FIS3语法规则</h2>
+
+</hgroup><article>
+
+<div class="columns-1">
+    <pre><code class="javascript">
+    fis.media('W20E')
+    .match('**.{scss,css}', {
+        useHash: true,
+        optimizer: 'sass'//或optimizer: fis.plugin('sass', {outputStyle: 'expanded'})
+    })
+    .match('**/*ipcom.{scss,css}', {
+        release: false
+    })
+
+    command:
+
+    fis3 release W20E -d ../dist
+    </code></pre>
+</div>
+</article></section></slide>
+<slide class="slide fill" style="background-image:url('./img/bg.png')"><section class="slide-wrapper"><hgroup>
+<h1>Reasy之于FIS3</h1>
+
+</hgroup><article>
+
+<ul>
+<li>Reasy之于FIS3(<strong>针对于Tenda业务基于FIS3进行了封装</strong>)<ul class="rollIn">
+<li><strong>更易安装</strong> — reasy-install.bat</li>
+<li><strong>命令更精简</strong> — reasy命令即可完成基本编译 支持右键自动编译</li>
+<li><strong>配置更精简</strong> — 对于一些插件的配置进行了封装，配置更简洁</li>
+<li><strong>插件更可靠</strong> — 持保留意见 ⊙﹏⊙‖∣</li>
+<li><strong>更利于团队部署</strong> — 举例：微企W20E系列，便携A9系列</li>
+</ul>
+</li>
+</ul>
+
+</article></section></slide>
+<slide class="slide fill" style="background-image:url('./img/bg.png')"><section class="slide-wrapper"><hgroup>
+<h1>项目举例</h1>
+
+</hgroup><article>
+
+<ul>
+<li>微企W20E项目</li>
+</ul>
+
+</article></section></slide>
+<slide class="slide fill" style="background-image:url('./img/bg.png')"><section class="slide-wrapper"><hgroup>
+<h2>扩展学习</h2>
+
+</hgroup><article>
+
+<p><a href="http://fis.baidu.com" target="_blank">http://fis.baidu.com</a></p>
+<p><a href="https://github.com/fex-team/fis3" target="_blank">https://github.com/fex-team/fis3</a></p>
+<p>组内培训：Reasy系列培训文档(by Winson)</p>
+
+</article></section></slide>
+        
+
+        <!-- <slide class="slide logoslide dark nobackground">
+            <article class="flexbox vcenter">
+                <h2 style="color: white;">Powered By nodePPT v1.4.1</h2>
+            </article>
+        </slide> -->
+        <div class="slideTip" id="tip"></div>
+    </slides>
+</div>
+<canvas id="drawBoard" class="draw-board" width="900" height="700"></canvas>
+<div class="progress"><span id="progress"></span></div>
+<div id="_buttons">
+    <div class="_btn-box" id="_btn-box" style="display:none;">
+        <button class="fa fa-arrow-circle-left" id="_btn-prev"></button>
+        <button class="fa fa-arrow-circle-right" id="_btn-next"></button>
+        <button class="fa fa-paint-brush" id="_btn-brush"></button>
+        <button class="fa fa-compress" id="_btn-overview" data-toggle="fa fa-expand"></button>
+    </div>
+    <button class="fa fa-bars" id="_btn-bar"  data-toggle="fa fa-close"></button>
+</div>
+
+<script src="./js/mixjs/lib/mix.0.3.0.min.js"></script>
+<script>
+var base = location.protocol + '//' + location.host;
+
+var path = (location.pathname + '#').split('/').filter(function(v){
+    return !!v;
+});
+path.pop();
+path = path.join('/');
+MixJS.config({
+    baseURL: [ base, path, 'js'].join('/')+'/'
+});
+
+</script>
+<script src="./js/mixjs/lib/event/broadcast.js"></script>
+<script src="./js/nodeppt.js"></script>
+<script>
+Slide.init({
+    containerID: 'container',
+    drawBoardID: 'drawBoard',
+    slideClass: '.slide',
+    buildClass: '.build',
+    progressID: 'progress',
+    transition: 'slide3',
+    width: 1100,
+    dir: './',
+    
+    //打开下面的注释就开启postMessage方式
+    //访问网址127.0.0.1:8080/ppt/demo#client
+    control:{
+        type: 'postMessage',
+        args:{
+            isControl:  false
+        }
+    },
+    
+    tipID: 'tip'
+});
+MixJS.loadJS('highlight/highlight.pack.js',function(){
+    hljs.tabReplace = '  ';
+    hljs.initHighlightingOnLoad();
+});
+</script>
+<script src="./js/demo.js"></script>
+<link rel="stylesheet" href="./css/demo.css">
+<script src="./js/zoom.js"></script>
+
+<!-- MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+  config: ["TeX-AMS-MML_HTMLorMML.js"],
+  tex2jax: {inlineMath: [['\\(','\\)']]}});
+  //['$','$'], 避免货币价格冲突
+</script>
+<script type="text/javascript" src="./js/mathjax/MathJax.js"></script>
+
+<!--placeholder-->
+</body>
+</html>
